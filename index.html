@@ -8,21 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
 </head>
-
 <body>
-    <form action="/search" , method="POST">
+    <form action="https://cs20-hw14.herokuapp.com/" method="POST">
         <div> 
             <h2>Select type:</h2>
             <div> 
                 Stock ticker: <input type="radio" name="type" value="ticker" checked="checked">
                 <br>
-                Company: <input type="radio" name="type" value="ticker">
+                Company: <input type="radio" name="type" value="company">
             </div>
             <br>
         </div>
         <div>
             Search:
-            <input type="text" name="company">
+            <input type="text" name="search">
             <button type="submit">Submit</button>
         </div>
     </form>
