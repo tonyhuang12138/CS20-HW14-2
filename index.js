@@ -4,10 +4,15 @@ var bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://tonyhuang12138:Tony123456@cluster0.ypk43.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const port = process.env.PORT || 3000;
+const fs = require("fs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', function (req, res) {
+    fs.readFile('index.html', function (err, info) {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(info);
+    });
     res.sendFile(__dirname + '/index.html');
 })
 app.post('/', function (req, res) {
