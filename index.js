@@ -8,14 +8,15 @@ const fs = require("fs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('', (req, res) => {
+// app.get('', (req, res) => {
+    
+// });
+
+app.get('/', function (req, res) {
     fs.readFile('index.html', function (err, txt) {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(txt);
     });
-});
-
-app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 })
 app.post('/', function (req, res) {
